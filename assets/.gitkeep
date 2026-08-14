@@ -1,0 +1,5 @@
+# assets/
+
+Non-code resources for the course: figures, sample data files, PDFs of readings,
+diagrams used inside tutorials. Keep binary/large files out of Git where possible;
+prefer small, text-based samples and link to the original sources.
