@@ -189,7 +189,7 @@ cd my_project
 
 ```
 my_project/
-├── .python-version        # e.g. 3.13
+├── .python-version        # e.g. 3.12
 ├── README.md
 ├── pyproject.toml         # name, version, requires-python, deps
 ├── src/

@@ -40,7 +40,7 @@ uv run pytest                                                # run tests
 uv add <package>                                             # add a dependency
 uv remove <package>                                          # remove a dependency
 uv sync                                                      # re-sync after edits
-uv python pin 3.13                                           # change interpreter
+uv python pin 3.12                                           # change interpreter
 ```
 
 ## 4. SSH — connect your terminal to GitHub (do this once)
@@ -67,6 +67,26 @@ The same `.pub` key can be added to **GitLab** (*Settings → SSH Keys*) or
 uv lock --upgrade        # recompute the lockfile against latest releases
 uv sync                  # apply it
 ```
+
+## 5b. Troubleshooting: the 3D plot window does not open
+
+The plotting scripts auto-detect an interactive backend (TkAgg, QtAgg,
+MacOSX) and fall back to the non-interactive `Agg` backend with a printed
+message. If you see *"No interactive window available"* on a machine that has
+a display:
+
+1. **Stale `TCL_LIBRARY` / `TK_LIBRARY` exports** — recent uv-managed Python
+   builds bundle **Tcl 9** and locate their own library automatically. An old
+   `export TCL_LIBRARY=/usr/lib/tcl8.6` in `~/.bashrc` / `~/.zshrc` forces a
+   version conflict (`have 9.0.4, need exactly 8.6.16`). Comment those lines
+   out and open a new terminal.
+2. **Python build without a bundled Tcl** — if you still get
+   *"Cannot find a usable init.tcl"*, pin a Python whose build bundles the
+   Tcl library: `uv python pin 3.12` (this repo's default) and
+   `uv sync` again.
+3. **No GUI toolkit at all** (headless server) — install one:
+   `uv add --dev PySide6` (QtAgg) or use the Jupyter notebook with
+   `%matplotlib widget`.
 
 ## 6. Where do the tutorials live?
 

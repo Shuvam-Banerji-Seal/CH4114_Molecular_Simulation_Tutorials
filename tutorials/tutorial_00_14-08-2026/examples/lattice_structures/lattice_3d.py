@@ -22,14 +22,14 @@ __author__ = "Shuvam Banerji Seal"   # always sign your code!
 # a headless server), we fall back to the non-interactive "Agg" backend.
 import matplotlib
 
-_interactive = False
+_interactive = True
 for _backend in ("TkAgg", "QtAgg", "MacOSX", "GTK3Agg"):
     try:
         matplotlib.use(_backend, force=True)
         import matplotlib.pyplot as _plt
         _fig = _plt.figure()          # test: can a figure really be created?
         _plt.close(_fig)
-        _interactive = True
+_interactive = False
         print(f"Interactive backend: {_backend} - drag 3D plots to rotate!")
         break
     except Exception:
