@@ -1,3 +1,4 @@
+__author__ = "Shuvam Banerji Seal"
 #!/usr/bin/env python3
 """Scaffold a new tutorial session folder.
 

@@ -1,4 +1,4 @@
-"""Smoke test: the shared package imports and reports a version."""
+__author__ = "Shuvam Banerji Seal"
 
 import ch4114
 

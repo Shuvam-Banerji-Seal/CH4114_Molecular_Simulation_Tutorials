@@ -1,5 +1,7 @@
 # Tutorial Template
 
+> **Author:** Shuvam Banerji Seal
+
 > Copy this file when scaffolding a new session. Replace `{{NUMBER}}` and `{{DATE}}`,
 > or run `uv run python scripts/new_tutorial.py --number 01 --date 21-08-2026`.
 

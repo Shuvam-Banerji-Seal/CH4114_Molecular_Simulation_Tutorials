@@ -1,3 +1,6 @@
+# CH4114 Molecular Simulation Tutorials — .gitignore
+# Author: Shuvam Banerji Seal
+
 # ── Python ──────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]

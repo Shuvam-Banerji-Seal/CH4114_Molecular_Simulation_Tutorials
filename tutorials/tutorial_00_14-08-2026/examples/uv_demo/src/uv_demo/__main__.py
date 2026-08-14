@@ -1,6 +1,3 @@
-"""Entry point so `python -m uv_demo` works."""
+__author__ = "Shuvam Banerji Seal"
 
 from uv_demo.main import main
-
-if __name__ == "__main__":
-    main()

@@ -3,6 +3,8 @@
 Usage: uv run python -m uv_demo
 """
 
+__author__ = "Shuvam Banerji Seal"
+
 from __future__ import annotations
 
 import numpy as np

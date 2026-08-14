@@ -1,15 +1,22 @@
 [project]
 name = "ch4114-molecular-simulation-tutorials"
 version = "0.1.0"
-description = "CH4114 Molecular Simulation — hands-on tutorials (Git, GitHub, project organization, uv)."
+description = "CH4114 Molecular Simulation — hands-on tutorials: Git, GitHub, project organization, uv, NumPy, Matplotlib, and lattice structures."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Shuvam Banerji Seal" }]
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+]
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.3.0",
+    "ipympl>=0.10.0",
+    "jupyter>=1.1.1",
+    "nbconvert>=7.17.1",
     "pytest>=8.0",
 ]
 

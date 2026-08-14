@@ -1,5 +1,8 @@
 # Part 1 — Git & GitHub
 
+> **Author:** Shuvam Banerji Seal
+
+
 > **Goal:** understand version control, master the core Git workflow, and publish
 > your work to GitHub (web UI **and** `gh` CLI).
 
@@ -203,7 +206,67 @@ gh repo view --web                                  # open repo in browser
 
 ---
 
-## 1.6 Cheat sheet (print this)
+## 1.6 SSH keys — connect your terminal to GitHub (do this once)
+
+SSH (Secure SHell) lets your terminal talk to GitHub without typing a password
+on every push. You create a **key pair**: a *private* key that stays on your
+machine (never share it!) and a *public* key that you upload to GitHub.
+
+### Step 1 — generate the key
+
+```bash
+ssh-keygen -t ed25519 -C "you@example.com"
+```
+
+- `-t ed25519` → use the modern, secure Ed25519 algorithm
+- `-C "you@example.com"` → a comment/label so you remember whose key it is
+- Press **Enter** for the default location (`~/.ssh/id_ed25519`)
+- Optionally set a passphrase (recommended); or press Enter twice for none
+
+### Step 2 — start the SSH agent and add your key
+
+```bash
+eval "$(ssh-agent -s)"        # start the agent (macOS/Linux)
+ssh-add ~/.ssh/id_ed25519     # register your key with the agent
+```
+
+### Step 3 — copy the PUBLIC key
+
+```bash
+cat ~/.ssh/id_ed25519.pub     # the .pub file is the public key — safe to share
+```
+
+### Step 4 — add it to GitHub
+
+1. Go to **https://github.com/settings/keys**
+2. Click **New SSH key**
+3. Title: e.g. `my-laptop`
+4. Paste the public key, click **Add SSH key**
+
+### Step 5 — test the connection
+
+```bash
+ssh -T git@github.com
+# Hi <your-username>! You've successfully authenticated, but GitHub does not
+# provide shell access.
+```
+
+Now clone over SSH and push without passwords:
+
+```bash
+git clone git@github.com:USERNAME/REPO.git
+```
+
+> 🔑 **The same key works everywhere:** GitLab → *Settings → SSH Keys*,
+> Bitbucket → *Personal settings → SSH keys*, any server with
+> `ssh-copy-id user@server`. One key, many services.
+>
+> ⚠️ **Never** commit, email, or paste your *private* key (`id_ed25519`).
+> Only the `.pub` file is meant to be shared.
+
+---
+
+## 1.7 Cheat sheet (print this)
 
 ```bash
 # setup

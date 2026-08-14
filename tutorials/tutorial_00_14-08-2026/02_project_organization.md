@@ -1,5 +1,8 @@
 # Part 2 — Organizing Your Project Like a Professional
 
+> **Author:** Shuvam Banerji Seal
+
+
 > **Goal:** learn the standard Python project layout so that *anyone* (including
 > future-you) can open your repo and know exactly where everything lives.
 

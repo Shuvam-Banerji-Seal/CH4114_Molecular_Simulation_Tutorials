@@ -1,5 +1,8 @@
 # Part 3 — uv: Python Environments Without the Pain
 
+> **Author:** Shuvam Banerji Seal
+
+
 > **Goal:** master `uv` — the modern tool that replaces `venv` + `pip` +
 > `requirements.txt` with two files (`pyproject.toml`, `uv.lock`) and a handful
 > of commands.
