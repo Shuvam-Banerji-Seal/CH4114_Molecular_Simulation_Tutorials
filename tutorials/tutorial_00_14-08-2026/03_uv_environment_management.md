@@ -81,6 +81,59 @@ uv --version      # e.g. "uv 0.12.2"
 > `source ~/.bashrc` on Linux/macOS) so the new `uv` binary is on your `PATH`.
 > Windows users: restart the terminal or re-open PowerShell.
 
+### Add uv to your PATH (`.bashrc` / `.zshrc`)
+
+The official installer normally adds `~/.local/bin` to your `PATH` for you. If
+you get `uv: command not found` after installing (common with older shells,
+non-interactive terminals, or manual installs), add the directory by hand.
+
+**Where uv actually lives, per install method:**
+
+| Install method | Binary location |
+|----------------|-----------------|
+| Official installer (`curl … \| sh`) | `~/.local/bin/uv` |
+| Homebrew (macOS) | `/opt/homebrew/bin/uv` (Apple Silicon) or `/usr/local/bin/uv` (Intel) |
+| `cargo install uv` | `~/.cargo/bin/uv` |
+| Windows installer / winget | `%USERPROFILE%\.local\bin\uv.exe` (usually on PATH automatically) |
+
+**Bash — edit `~/.bashrc`:**
+
+```bash
+# add this line (at the end of ~/.bashrc)
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Then apply it:
+
+```bash
+source ~/.bashrc
+```
+
+**Zsh — edit `~/.zshrc`:**
+
+```zsh
+# add this line (at the end of ~/.zshrc)
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Then apply it:
+
+```zsh
+source ~/.zshrc
+```
+
+**Verify from a fresh terminal:**
+
+```bash
+which uv        # should print the path, e.g. /home/you/.local/bin/uv
+uv --version    # should print, e.g. uv 0.12.2
+```
+
+> 🔎 **Diagnostic:** `echo $PATH` shows the current search path. If
+> `~/.local/bin` is missing from it, the `export PATH=…` line above is exactly
+> what you need. Don't forget to also check `~/.profile` / `~/.bash_profile` —
+> some setups load those instead of `.bashrc`.
+
 ---
 
 ---

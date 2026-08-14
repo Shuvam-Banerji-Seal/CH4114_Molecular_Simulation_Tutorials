@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 TUTORIALS_DIR = REPO_ROOT / "tutorials"
 TEMPLATE = TUTORIALS_DIR / "TEMPLATE.md"
 
-SUBDIRS = ("exercises", "examples")
+SUBDIRS = ("exercises", "examples", "slides")
 
 
 def main() -> int:

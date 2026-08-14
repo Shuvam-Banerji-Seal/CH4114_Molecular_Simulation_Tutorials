@@ -44,6 +44,31 @@ htmlcov/
 .ipynb_checkpoints/
 *_files/
 
+# ── LaTeX / Beamer build artifacts (garbage — never commit) ─────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.dvi
+*.ps
+*.bak
+*.sav
+*~
+
 # ── OS / editor noise ───────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db

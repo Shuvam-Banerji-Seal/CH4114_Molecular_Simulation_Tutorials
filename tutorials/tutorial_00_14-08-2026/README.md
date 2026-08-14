@@ -32,6 +32,17 @@ By the end of this session you will be able to:
 | 2 | **Organizing your project** — the professional folder layout | [`02_project_organization.md`](02_project_organization.md) |
 | 3 | **uv & Python environments** — virtualenvs without the pain | [`03_uv_environment_management.md`](03_uv_environment_management.md) |
 
+## 🎞️ Slides (Beamer, 16:9)
+
+| Part | Source (`.tex`) | Compiled (`.pdf`) |
+|------|-----------------|-------------------|
+| 1 — Git & GitHub | [`slides/01_git_and_github/slides_01_git_and_github.tex`](slides/01_git_and_github/slides_01_git_and_github.tex) | [`slides_01_git_and_github.pdf`](slides/01_git_and_github/slides_01_git_and_github.pdf) |
+| 2 — Project organization | [`slides/02_project_organization/slides_02_project_organization.tex`](slides/02_project_organization/slides_02_project_organization.tex) | [`slides_02_project_organization.pdf`](slides/02_project_organization/slides_02_project_organization.pdf) |
+| 3 — uv environments | [`slides/03_uv_environment_management/slides_03_uv_environment_management.tex`](slides/03_uv_environment_management/slides_03_uv_environment_management.tex) | [`slides_03_uv_environment_management.pdf`](slides/03_uv_environment_management/slides_03_uv_environment_management.pdf) |
+
+> Compile with `pdflatex` (two passes). Build artifacts (`.aux`, `.log`, `.nav`, …)
+> are git-ignored; only the `.tex` sources and `.pdf` outputs are committed.
+
 ## ⏱️ Session Plan
 
 | Time  | Block                          | Material |
